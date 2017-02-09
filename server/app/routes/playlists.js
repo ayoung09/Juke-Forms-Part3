@@ -13,6 +13,8 @@ router.get('/', function (req, res, next) {
 });
 
 router.post('/', function (req, res, next) {
+  console.log("request body is: " + req.body);
+
   Playlist.create(req.body)
   .then(playlist => res.status(201).json(playlist))
   .catch(next);

@@ -9,6 +9,13 @@ const NewPlaylist = (props) => {
           <div className="form-group">
             <label className="col-xs-2 control-label">Name</label>
             <div className="col-xs-10">
+            { props.titleIsTooLong() &&
+              <div className="alert alert-warning">Playlist title must be less than 16 characters</div>
+            }
+            { props.isDirty() && props.titleDoesNotExist() ?
+              <div className="alert alert-warning">Playlist title must not be empty</div>:
+              null
+            }
               <input
                 className="form-control"
                 type="text"

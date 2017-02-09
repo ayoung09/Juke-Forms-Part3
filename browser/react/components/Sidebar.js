@@ -5,6 +5,7 @@ const Sidebar = (props) => {
 
   return (
     <sidebar>
+    {console.log("sidebar props are: ", props)}
       <img src="juke.svg" className="logo" />
       <section>
         <h4 className="menu-item">
@@ -26,6 +27,17 @@ const Sidebar = (props) => {
             </Link>
           </h4>
         </section>
+
+        <ul className="list-unstyled">
+        {props.playlists.map( (playlist) => {
+          return(
+            <li key={playlist.id} className="playlist-item menu-item">
+              <Link to={`/playlists/${playlist.id}`}>{playlist.name}</Link>
+            </li>
+            )
+          })
+        }
+        </ul>
     </sidebar>
   );
 }

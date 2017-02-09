@@ -9,3 +9,4 @@ coverage
 server/audio/
 public/bundle.js
 public/bundle.js.map
+.vscode
